@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Cómo aplicar el Repository Pattern en Vue 3 con JSON",
+    "slug": "repository-pattern-vue3",
+    "excerpt": "Separa acceso a datos, estado y UI con una capa de repositorios para escalar tu app Vue sin acoplar componentes a la fuente de datos.",
+    "content": "El Repository Pattern en Vue 3 te permite desacoplar la vista de la fuente de datos. En lugar de consumir fetch o JSON directo desde componentes, centralizas la lectura en repositorios con metodos claros como getAll, getBySlug o getByCategory. Esto simplifica pruebas, facilita migraciones a APIs reales y evita duplicar logica en composables. Una buena practica es que el componente solo sepa mostrar estados de loading y error, mientras que el composable orquesta la llamada al repositorio y normaliza la data. Asi, cuando cambias de JSON local a backend, tocas una sola capa y no toda la aplicacion.",
+    "category": "patrones",
+    "author": "Ana García",
+    "date": "2025-04-20",
+    "readTime": 5,
+    "featured": true,
+    "image": "https://picsum.photos/seed/vue-architecture/1600/900"
+  },
+  {
+    "id": 2,
+    "title": "Composables en Vue 3: usePosts y useCategories",
+    "slug": "composables-vue3",
+    "excerpt": "Domina la Composition API creando composables reutilizables para carga de datos, filtros, estados de error y reglas de negocio.",
+    "content": "Un composable bien hecho en Vue 3 no solo agrupa refs: tambien define contratos claros para estados y acciones. Por ejemplo, usePosts puede exponer posts, loading, error y funciones como fetchAll o fetchByCategory. Esta separacion permite reutilizar la misma logica entre Home, Category y futuras vistas sin repetir codigo. Tambien mejora mantenibilidad porque cada componente queda enfocado en renderizar UI. Ademas, puedes componer composables entre si para resolver casos reales, como paginacion, busqueda y cache en memoria, manteniendo una API limpia para el resto del proyecto.",
+    "category": "vue",
+    "author": "Carlos Ruiz",
+    "date": "2025-04-18",
+    "readTime": 4,
+    "featured": false,
+    "image": "https://picsum.photos/seed/vue-composables/1600/900"
+  },
+  {
+    "id": 3,
+    "title": "Pinia: gestión de estado modular y sencilla",
+    "slug": "pinia-estado-modular",
+    "excerpt": "Aprende a modelar stores por dominio en Pinia, con acciones asincronas, getters utiles y una integracion limpia con repositorios.",
+    "content": "Pinia destaca por su simplicidad y tipado amigable en Vue 3. Una estrategia efectiva es crear un store por dominio funcional: posts, auth, settings, etc. Cada store debe tener estado minimo, getters con valor real y acciones que manejen side effects de forma centralizada. Si integras Pinia con una capa de repositorios, evitas llamadas de red en cada componente y reduces acoplamiento. Tambien puedes hidratar estado inicial en onMounted y luego derivar vistas con getters para no recalcular filtros en cada render. Esta combinacion hace que la aplicacion sea mas predecible y facil de depurar.",
+    "category": "vue",
+    "author": "Ana García",
+    "date": "2025-04-15",
+    "readTime": 6,
+    "featured": false,
+    "image": "https://picsum.photos/seed/vue-pinia/1600/900"
+  },
+  {
+    "id": 4,
+    "title": "Vue Router 4: rutas dinámicas y parámetros",
+    "slug": "vue-router-rutas-dinamicas",
+    "excerpt": "Configura rutas dinamicas con slugs, lazy loading y navegacion robusta entre vistas de detalle y listados en Vue 3.",
+    "content": "Vue Router 4 es clave para escalar aplicaciones SPA en Vue 3. Al usar rutas dinamicas como /post/:slug o /category/:slug, puedes mantener URLs limpias y semanticamente utiles para SEO tecnico y analitica. Con lazy loading por vista reduces el bundle inicial y mejoras performance percibida. Otra recomendacion es observar cambios de parametros con watch para recargar datos sin refrescar pagina completa. Si ademas separas navegacion, carga y render en capas, tu flujo de rutas queda mas predecible y facil de testear.",
+    "category": "vue",
+    "author": "Luis Mora",
+    "date": "2025-04-12",
+    "readTime": 7,
+    "featured": false,
+    "image": "https://picsum.photos/seed/vue-router/1600/900"
+  },
+  {
+    "id": 5,
+    "title": "Renderizado condicional y listas en Vue sin anti-patrones",
+    "slug": "renderizado-condicional-listas-vue",
+    "excerpt": "Evita errores comunes con v-if y v-for, y aprende a estructurar listas reactivas con keys estables y estados vacios claros.",
+    "content": "Cuando una UI crece, el mal uso de v-if y v-for genera bugs visuales y rendimiento inconsistente. En Vue 3 conviene usar keys estables basadas en identificadores reales, no en indices. Tambien es importante separar estados de loading, error y empty para que el usuario siempre reciba feedback correcto. Si usas listas filtradas, crea computeds para evitar logica compleja en plantilla. Una regla practica: template declarativo, logica en script y estilos con clases semanticas. Este enfoque reduce deuda tecnica y hace tus componentes mas faciles de evolucionar.",
+    "category": "vue",
+    "author": "Mariana Soto",
+    "date": "2025-04-10",
+    "readTime": 5,
+    "featured": false,
+    "image": "https://picsum.photos/seed/vue-render/1600/900"
+  },
+  {
+    "id": 6,
+    "title": "Buenas practicas de arquitectura en proyectos Vue medianos",
+    "slug": "arquitectura-vue-proyectos-medianos",
+    "excerpt": "Organiza carpetas, responsabilidades y contratos entre vistas, componentes, composables y repositorios para crecer sin caos.",
+    "content": "En proyectos Vue medianos, la diferencia entre una app mantenible y una fragil suele ser arquitectura. Define capas claras: vistas para composicion, componentes para UI reutilizable, composables para logica reactiva y repositorios para datos. Evita que las vistas conozcan detalles de infraestructura y no mezcles reglas de negocio en componentes visuales. Conviene adoptar convenciones de nombres, pruebas por dominio y criterios para cuando crear o no un store global. Con esta base, incorporar nuevas features se vuelve incremental en lugar de riesgoso.",
+    "category": "vue",
+    "author": "Daniel Vega",
+    "date": "2025-04-08",
+    "readTime": 8,
+    "featured": false,
+    "image": "https://picsum.photos/seed/vue-structure/1600/900"
+  }
+]
